@@ -1,0 +1,51 @@
+﻿@model List<MongoDbProject.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <h1 style="align-content:center">ÜRÜN TABLOSU</h1>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ÜRÜN İSMİ</th>
+                                <th>ADET</th>
+                                <th>FİYAT</th>
+                                <th>KATEGORİ</th>
+                                <th>ÜRÜN GÜNCELLE</th>
+                                <th>ÜRÜN SİL</th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var item in Model)
+                        {
+                            if (item != null)
+                            {
+                                <tbody>
+                                    <tr>
+                                        <th>@item.ProductId</th>
+                                        <td>@item.ProductName</td>
+                                        <td>@item.Unit</td>
+                                        <td>@item.Price</td>
+                                        <td>@item.Category</td>
+                                        <td><a href="/Product/UpdateProduct/@item.ProductId/" class="btn btn-primary border-5">GÜNCELLE</a></td>
+                                        <td><a href="/Product/RemoveProduct/@item.ProductId/" class="btn btn-danger border-5">SİL</a></td>
+                                    </tr>
+                                </tbody>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

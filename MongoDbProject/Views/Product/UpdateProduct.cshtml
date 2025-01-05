@@ -1,0 +1,49 @@
+﻿@model MongoDbProject.Models.Product
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            @if(Model != null)
+            {
+                <form method="post">
+                    <div class="card">
+                        @* <input type="hidden" asp-for="ProductId"/> *@
+                        <div class="card-header">
+                            <h1>ÜRÜN GÜNCELLEME SAYFASI</h1>
+                        </div>
+                        <div class="card-body col-md-12">
+                            <label for="ProductId" style="color:black;background-color:white">ÜRÜN ID</label>
+                            <input id="ProductId" type="text" asp-for="ProductId" />
+                            <br />
+                            <br />
+                            <label for="ProductName" style="color:black;background-color:white">ÜRÜN İSMİ</label>
+                            <input id="ProductName" type="text" asp-for="ProductName" />
+                            <br />
+                            <br />
+                            <label for="Unit" style="color:black;background-color:white">ADET</label>
+                            <input id="Unit" type="text" asp-for="Unit" />
+                            <br />
+                            <br />
+                            <label for="Price" style="color:black;background-color:white">FİYAT</label>
+                            <input id="Price" type="text" asp-for="Price" />
+                            <br />
+                            <br />
+                            <label for="Category" style="color:black;background-color:white">KATEGORİ</label>
+                            <input id="Category" type="text" asp-for="Category" />
+                            <br />
+                            <div class="card-action">
+                                <button class="btn btn-dark">GÜNCELLE</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            }
+            
+        </div>
+    </div>
+</div>
+

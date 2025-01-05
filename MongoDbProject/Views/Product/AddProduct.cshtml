@@ -1,0 +1,40 @@
+﻿@model MongoDbProject.Models.Product
+@{
+    ViewData["Title"] = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <form method="post">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>ÜRÜN EKLEME SAYFASI</h1>
+                    </div>
+                    <div class="card-body col-md-12">
+                        <label for="ProductName" style="color:black;background-color:white">ÜRÜN İSMİ</label>
+                        <input id="ProductName" type="text" asp-for="ProductName" />
+                        <br />
+                        <br />
+                        <label for="Unit" style="color:black;background-color:white">ADET</label>
+                        <input id="Unit" type="text" asp-for="Unit" />
+                        <br />
+                        <br />
+                        <label for="Price" style="color:black;background-color:white">FİYAT</label>
+                        <input id="Price" type="text" asp-for="Price" />
+                        <br />
+                        <br />
+                        <label for="Category" style="color:black;background-color:white">KATEGORİ</label>
+                        <input id="Category" type="text" asp-for="Category" />
+                        <br />
+                        <div class="card-action">
+                            <button class="btn btn-primary">EKLE</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
